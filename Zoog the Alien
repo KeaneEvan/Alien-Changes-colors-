@@ -1,0 +1,62 @@
+void setup() {
+  size(500,500);
+  smooth();
+  frameRate(30);
+}
+
+
+void draw() {
+  background(255);
+  ellipseMode(CENTER);
+  rectMode(CENTER);
+ 
+ //Zoog Arms 
+  stroke(0);
+  line(mouseX,mouseY,pmouseX+30,pmouseY+20);
+  line(mouseX,mouseY,pmouseX-30,pmouseY+20);
+  
+  //Zoog Body
+  stroke(255);
+  fill(mouseX,0,mouseY);
+  rect(mouseX,mouseY,20,100);
+  
+  //Head 
+  stroke(0);
+  fill(255);
+  
+
+  if (mouseX + pmouseY > 100)
+  fill(0,250,0);
+  else fill(255);
+  
+   
+  ellipse(mouseX,mouseY-30,60,60);
+  
+  //Zoog Eyes
+  fill(mouseX,0,mouseY);
+  ellipse(mouseX-19,mouseY-30,16,32);
+  ellipse(mouseX+19,mouseY-30,16,32);
+  
+  
+  //Zoog Legs
+  stroke(0);
+  line(mouseX-10,mouseY+50,pmouseX-10,pmouseY+60);
+  line(mouseX+10,mouseY+50,pmouseX+10,pmouseY+60);
+  
+  
+  
+  
+}
+
+void mouseMoved(){
+  background(255);
+  
+  println(mouseX);
+}
+
+
+
+void mouseReleased(){
+  frameRate(30);
+
+} 
